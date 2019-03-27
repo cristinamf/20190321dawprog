@@ -1,31 +1,84 @@
 package examen.ejercicio4;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
 import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Ejercicio4 {
-
-	public static void main(String[] args) {
-		List <String> agenda=new ArrayList <String>();
+	public static void main(String[] args) throws Exception {
+		HashMap<String, String> agenda= new HashMap<String, String>();
 		Scanner sc=new Scanner(System.in);
-		String n = null;
-		do{
-			System.out.println("Entrada: ");
-			n=sc.nextLine();
-			String buscar="buscar:";
-			String[] divisionAgenda = n.split("-");
-			String nombre = divisionAgenda[0]; // 123
-			String telefono = divisionAgenda[1]; // 654321
-			if(n!="fin") {
-				if(!agenda.contains(n))
-					agenda.add(n);
-				else if(agenda.contains(nombre))
-					agenda.set(divisionAgenda.length+1,telefono);
-			}
-				
+		System.out.println("Entrada: ");
+		String n=sc.nextLine();
+		Pattern p=Pattern.compile("\\s*buscar\\s*|\\s*fin\\s*$|\\s*(\\w+\\s*)+");
+		Matcher m=p.matcher(n);
+		
+		boolean fin=false;
+		String token;
+		while(!fin) {
+			int estado=0;
+			switch(estado) {
+			case 0:
+				try {
+					
+				}catch{
+					
+				}
 			
-		}while (n.equalsIgnoreCase("fin")==false);
+				break;
+			case 1:
+				break;
+			case 2:
+				break;
+			case 3:
+				break;
+			case 4:
+				break;
+			}
+			
+		}
+		
+		
+		
+		
+		
+		
+//		if (m.find()) {
+//			p=Pattern.compile("\\s*fin\\s*$");
+//			m=p.matcher(n);
+//			do {
+//				p=Pattern.compile("\\s*(\\w+\\s*)+");
+//				m=p.matcher(n);
+//				if (m.find()) {
+//					if(!agenda.containsKey(nombre)) {
+//						agenda.put(nombre, nombre);
+//						agenda.put(telefono, telefono);
+//					}
+//					else if(agenda.containsKey(nombre)) {
+//				//		agenda.replace(telefono, telefono, telefono);
+//						agenda.remove(telefono);
+//						agenda.put(telefono, telefono);
+//					}
+//					else {
+//						throw new Exception ("Se ha introducido mal. Tiene que ser nombre-telefono");
+//					}
+//				}
+//				p=Pattern.compile("\\s*buscar\\s*");
+//				m=p.matcher(n);
+//				if (m.find()) {
+//					if(agenda.containsValue(nombre)) 
+//						System.out.println(nombre+"->"+agenda.get(telefono));
+//					else
+//						System.out.println
+//						("Salida: "+nombre+" no se encuentra en la agenda");
+//				}
+//				else {
+//					throw new Exception ("Se ha introducido mal. Tiene que ser nombre-telefono o buscar:nombre");
+//				}
+//			}while (m.find());
+//		}
+//		else
+//			throw new Exception("No se ha introducido bien.");
 	}
-
 }
